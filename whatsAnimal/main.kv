@@ -1,0 +1,409 @@
+<ImageButton@Button>:
+    source: None
+
+    Image:
+        source: root.source
+        pos: root.pos
+        size: root.size
+MDScreen:
+    name: "main"
+    id: main
+    MDFloatLayout:
+        md_bg_color: 191/255, 172/255, 224/255, 1
+        Image:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.93}
+            source: "topBar.png"
+
+        Label:
+            text: "나는 어떤 동물상일까요?"
+            font_name: "Hancom Gothic Regular.ttf"
+            font_size: 25
+            pos_hint: {'center_x':0.5, 'center_y':0.79}
+
+        ImageButton:
+            id: manIcon_Button
+            source: "manIcon.png"
+            size_hint: (None, None)
+            pos_hint: {'center_x': 0.35, 'center_y': 0.68}
+            on_press: app.manIcon_Button_clicked()
+            background_color: 0,0,0,0
+
+
+        ImageButton:
+            id: womanIcon_Button
+            source: "womanIcon.png"
+            size_hint: (None, None)
+            pos_hint: {'center_x': 0.65, 'center_y': 0.68}
+            on_press: app.womanIcon_Button_clicked()
+            background_color: 0,0,0,0
+
+        Image:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+            source: "imageBoxOut.png"
+
+        Image:
+            size_hint: (1,1)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+            source: "imageBoxIn.png"
+
+
+        ImageButton:
+            id: imageUpload_Button
+            source: "imageUpload.png"
+            size_hint: (0.3, 0.05)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+            on_release:
+                root.manager.current = "gallary"
+            background_color: 0,0,0,0
+
+        Label:
+            id: genderClick
+            opacity: 0
+            text: ""
+
+<GallaryScreen>:
+    name: "gallary"
+    MDFloatLayout:
+        Image:
+            source: "gallary.png"
+
+        ImageButton:
+            id: g1
+            source: "g1.png"
+            size_hint: (None, None)
+            pos_hint: {'right': 0.3, 'top': 0.68}
+            on_release:
+                root.manager.current = "loadingScreen"
+                app.gallary_clicked("g1.png")
+            background_color: 0,0,0,0
+
+        ImageButton:
+            id: g2
+            source: "g2.png"
+            size_hint: (None, None)
+            pos_hint: {'right': 0.62, 'top': 0.68}
+            on_release:
+                root.manager.current = "loadingScreen"
+                app.gallary_clicked("g2.png")
+            background_color: 0,0,0,0
+
+        ImageButton:
+            id: g3
+            source: "g3.png"
+            size_hint: (None, None)
+            pos_hint: {'right': 0.92, 'top': 0.68}
+            on_release:
+                root.manager.current = "loadingScreen"
+                app.gallary_clicked("g3.png")
+            background_color: 0,0,0,0
+
+        ImageButton:
+            id: g4
+            source: "g4.png"
+            size_hint: (None, None)
+            pos_hint: {'right': 0.3, 'top': 0.54}
+            on_release:
+                root.manager.current = "loadingScreen"
+                app.gallary_clicked("g4.png")
+            background_color: 0,0,0,0
+
+        ImageButton:
+            id: g5
+            source: "g5.png"
+            size_hint: (None, None)
+            pos_hint: {'right': 0.62, 'top': 0.54}
+            on_release:
+                root.manager.current = "loadingScreen"
+                app.gallary_clicked("g5.png")
+            background_color: 0,0,0,0
+
+        ImageButton:
+            id: g6
+            source: "g6.png"
+            size_hint: (None, None)
+            pos_hint: {'right': 0.92, 'top': 0.54}
+            on_release:
+                root.manager.current = "loadingScreen"
+                app.gallary_clicked("g6.png")
+            background_color: 0,0,0,0
+
+<LoadingScreen>:
+    name: "loadingScreen"
+    MDFloatLayout:
+        md_bg_color: 191/255, 172/255, 224/255, 1
+        Image:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.93}
+            source: "topBar.png"
+
+
+        Image:
+            id: loadingImage
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            source: "loading.gif"
+            keep_ratio: False
+            anim_delay: -1
+            anim_loop: 2
+
+        Image:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+            source: "dog.png"
+
+        Image:
+            pos_hint: {'center_x': 0.2, 'center_y': 0.59}
+            source: "monky.png"
+
+        Image:
+            pos_hint: {'center_x': 0.8, 'center_y': 0.59}
+            source: "cat.png"
+
+        Image:
+            pos_hint: {'center_x': 0.18, 'center_y': 0.46}
+            source: "dino.png"
+
+        Image:
+            pos_hint: {'center_x': 0.82, 'center_y': 0.46}
+            source: "fox.png"
+
+        Image:
+            pos_hint: {'center_x': 0.37, 'center_y': 0.36}
+            source: "fish.png"
+
+        Image:
+            pos_hint: {'center_x': 0.63, 'center_y': 0.36}
+            source: "snake.png"
+
+<ResultScreen>:
+    name: "resultScreen"
+    MDFloatLayout:
+        md_bg_color: 191/255, 172/255, 224/255, 1
+        Image:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.93}
+            source: "topBar.png"
+
+        Label:
+            text: "나는 어떤 동물상일까요?"
+            font_name: "Hancom Gothic Regular.ttf"
+            font_size: 25
+            pos_hint: {'center_x':0.5, 'center_y':0.79}
+
+        Image:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+            source: "resultBoxOut.png"
+
+        Image:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+            source: "resultBoxIn.png"
+
+        Image:
+            id:selectedImage
+            pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+            size_hint: (0.55,0.9)
+            keep_ratio: True
+            allow_stretch: True
+
+        Label:
+            id: resultAnimal
+            color: 100/255, 92/255, 170/255, 1
+            font_size: 23
+            font_name: "Hancom Gothic Bold.ttf"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+
+        ImageButton:
+            id: animalDetail
+            source: "detail.png"
+            size_hint: (0.7,0.7)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.22}
+            background_color: 0,0,0,0
+            on_release:
+                root.manager.current = "detailScreen"
+
+<DetailScreen>:
+    orientation: 'vertical'
+    ScrollView:
+        name: "detailScreen"
+        FloatLayout:
+            canvas.before:
+                Color:
+                    rgba: (191/255, 172/255, 224/255, 1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            size_hint_y: None
+            height: 1250
+
+            Image:
+                pos_hint: {'center_x': 0.5, 'center_y': 0.955}
+                source: "topBar.png"
+
+            Label:
+                id: resultAnimall
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 25
+                font_name: "Hancom Gothic Bold.ttf"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.859}
+
+            Image:
+                pos_hint: {'center_x': 0.5, 'center_y': 0.695}
+                source: "resultBoxOut.png"
+
+            Image:
+                pos_hint: {'center_x': 0.5, 'center_y': 0.695}
+                source: "resultBoxIn.png"
+
+            Image:
+                id:resultSelectedImage
+                pos_hint: {'center_x': 0.5, 'center_y': 0.695}
+                size_hint: (0.55,0.9)
+                keep_ratio: True
+                allow_stretch: True
+
+            Image:
+                id:Danimal
+                pos_hint: {'center_x': 0.8, 'center_y': 0.58}
+
+            Image:
+                pos_hint: {'center_x': 0.5, 'center_y': 0.325}
+                source: "detailBox.png"
+
+            Label:
+                id: detailComent1
+                font_size: 18
+                font_name: "Hancom Gothic Bold.ttf"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.50}
+
+            Label:
+                id: detailComent2
+                font_size: 18
+                font_name: "Hancom Gothic Bold.ttf"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.48}
+
+            Label:
+                id: detailComent3
+                font_size: 18
+                font_name: "Hancom Gothic Bold.ttf"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.46}
+
+            Label:
+                id: detailComent4
+                font_size: 18
+                font_name: "Hancom Gothic Bold.ttf"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.44}
+
+            Label:
+                id: animalName1
+                font_name: "Hancom Gothic Bold.ttf"
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 19
+                pos_hint: {'center_x':0.15, 'center_y':0.385}
+
+            Image:
+                id: animalGraph1
+                pos_hint: {'center_x': 0.52, 'center_y': 0.385}
+
+            Label:
+                id: animalPercent1
+                font_name: "Hancom Gothic Bold.ttf"
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 19
+                pos_hint: {'center_x':0.87, 'center_y':0.385}
+
+            Label:
+                id: animalName2
+                font_name: "Hancom Gothic Bold.ttf"
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 19
+                pos_hint: {'center_x':0.15, 'center_y':0.355}
+
+            Image:
+                id: animalGraph2
+                pos_hint: {'center_x': 0.52, 'center_y': 0.355}
+
+            Label:
+                id: animalPercent2
+                font_name: "Hancom Gothic Bold.ttf"
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 19
+                pos_hint: {'center_x':0.87, 'center_y':0.355}
+
+            Label:
+                id: animalName3
+                font_name: "Hancom Gothic Bold.ttf"
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 19
+                pos_hint: {'center_x':0.15, 'center_y':0.325}
+
+            Image:
+                id: animalGraph3
+                pos_hint: {'center_x': 0.52, 'center_y': 0.325}
+
+            Label:
+                id: animalPercent3
+                font_name: "Hancom Gothic Bold.ttf"
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 19
+                pos_hint: {'center_x':0.87, 'center_y':0.325}
+
+            Label:
+                id: animalName4
+                font_name: "Hancom Gothic Bold.ttf"
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 19
+                pos_hint: {'center_x':0.15, 'center_y':0.295}
+
+            Image:
+                id: animalGraph4
+                pos_hint: {'center_x': 0.52, 'center_y': 0.295}
+
+            Label:
+                id: animalPercent4
+                font_name: "Hancom Gothic Bold.ttf"
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 19
+                pos_hint: {'center_x':0.87, 'center_y':0.295}
+
+
+            Label:
+                id: animalName5
+                font_name: "Hancom Gothic Bold.ttf"
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 19
+                pos_hint: {'center_x':0.15, 'center_y':0.265}
+
+            Image:
+                id: animalGraph5
+                pos_hint: {'center_x': 0.52, 'center_y': 0.265}
+
+            Label:
+                id: animalPercent5
+                font_name: "Hancom Gothic Bold.ttf"
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 19
+                pos_hint: {'center_x':0.87, 'center_y':0.265}
+
+            Label:
+                id: detailComent5
+                color: 100/255, 92/255, 170/255, 1
+                font_size: 20
+                font_name: "Hancom Gothic Bold.ttf"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.21}
+
+            Label:
+                id: detailComent6
+                font_size: 18
+                font_name: "Hancom Gothic Bold.ttf"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.18}
+
+            Label:
+                id: detailComent7
+                font_size: 18
+                font_name: "Hancom Gothic Bold.ttf"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.16}
+
+            ImageButton:
+                id: reTry
+                source: "retry.png"
+                size_hint: (0.7,0.7)
+                pos_hint: {'center_x': 0.5, 'center_y': 0.085}
+                background_color: 0,0,0,0
+                on_release:
+                    root.manager.current = "main"
